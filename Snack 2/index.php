@@ -3,7 +3,23 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. 
 Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
+<?php
 
+// Inizializzo  le variabili name, mail e age
+$name = $_GET ["name"];
+$mail = $_GET ["mail"];
+$age = $_GET ["age"];
+
+
+// Controllo con un ciclo for che
+
+// name sia più lungo di 3 caratteri, mail contenga una "@" e un ".", age sia un numero
+if ( strlen($name) > 3 && strpos($mail, '@') && strpos($mail,'.') && is_numeric($age)) {
+    echo "Accesso riuscito!!";
+} else {
+    echo "Accesso negato!!";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +32,12 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 </head>
 
 <body>
-
+    <form>
+        <input type="text" name="name" placeholder="inserisci il tuo nome">
+        <input type="text" name="mail" placeholder="inserisci la tua mail">
+        <input type="text" name="age" placeholder="inserisci la tua età">
+        <button type="submit">Invia i tuoi dati</button>
+    </form>
 </body>
 
 </html>
