@@ -39,9 +39,9 @@ $partite = [
 //     echo $partite[$i]["squadraCasa"] . " " . "-" . " " . $partite[$i]["squadraOspite"] . " " . "|" . " " . $partite[$i]["puntiCasa"] . "-" . $partite[$i]["puntiOspite"] . "<br><br>";
 // }
 
-for ($i = 0; $i < count($partite); $i++) {
-    echo "{$partite[$i]["squadraCasa"]} - {$partite[$i]["squadraOspite"]} | {$partite[$i]["puntiCasa"]} - {$partite[$i]["puntiOspite"]}<br><br>";
-}
+// for ($i = 0; $i < count($partite); $i++) {
+//     echo "{$partite[$i]["squadraCasa"]} - {$partite[$i]["squadraOspite"]} | {$partite[$i]["puntiCasa"]} - {$partite[$i]["puntiOspite"]}<br><br>";
+// }
 
 ?>
 
@@ -58,14 +58,21 @@ for ($i = 0; $i < count($partite); $i++) {
 </head>
 
 <body>
-    <h1>Le partite di oggi</h1>
-    <ul>
-       <?php 
-       for ($i = 0; $i < count($partite); $i++) {
-        echo "<li>{$partite[$i]["squadraCasa"]} - {$partite[$i]["squadraOspite"]} | {$partite[$i]["puntiCasa"]} - {$partite[$i]["puntiOspite"]}<br><br></li>";
-    }
-       ?> 
-    </ul>
+<h1>Le partite di oggi</h1>
+		<ul>
+			<!-- <li>Olimpia Milano - Cantù | 55-60</li> -->
+			<?php for( $i = 0; $i < count($partite); $i++ ) { ?>
+			
+				<li><?php echo "{$partite[$i]['squadraCasa']} - {$partite[$i]['squadraOspite']} | {$partite[$i]['puntiCasa']}-{$partite[$i]['puntiOspite']}"; ?></li>
+
+			<?php } ?>
+			<hr>
+			<?php 
+				for( $i = 0; $i < count($partite); $i++ ) { 
+					echo "<li>{$partite[$i]['squadraCasa']} - {$partite[$i]['squadraOspite']} | {$partite[$i]['puntiCasa']}-{$partite[$i]['puntiOspite']}</li>";
+				}
+			?>
+		</ul>
 </body>
 
 </html>
