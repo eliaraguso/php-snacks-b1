@@ -1,0 +1,11 @@
+.grey {
+    border: 3px solid gray;
+}
+.green {
+    border: 3px solid green;
+}
+
+.green, .grey {
+    padding: 1rem;
+    margin: 1rem;
+}
