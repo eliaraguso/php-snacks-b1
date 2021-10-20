@@ -4,7 +4,7 @@ Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squ
 e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
 Olimpia Milano - Cantù | 55-60 -->
 
-<?php 
+<?php
 
 // Creo Array di varie partite con i rispettivi punti
 $partite = [
@@ -35,8 +35,12 @@ $partite = [
 ];
 
 // Ciclo sulle partite e stampo i risultati come da consegna
-for ($i=0; $i < count($partite); $i++) { 
-    echo $partite[$i]["squadraCasa"] ." " . "-" . " " . $partite[$i]["squadraOspite"] . " " . "|" . " " . $partite[$i]["puntiCasa"] . "-" . $partite[$i]["puntiOspite"] . "<br><br>";
+// for ($i = 0; $i < count($partite); $i++) {
+//     echo $partite[$i]["squadraCasa"] . " " . "-" . " " . $partite[$i]["squadraOspite"] . " " . "|" . " " . $partite[$i]["puntiCasa"] . "-" . $partite[$i]["puntiOspite"] . "<br><br>";
+// }
+
+for ($i = 0; $i < count($partite); $i++) {
+    echo "{$partite[$i]["squadraCasa"]} - {$partite[$i]["squadraOspite"]} | {$partite[$i]["puntiCasa"]} - {$partite[$i]["puntiOspite"]}<br><br>";
 }
 
 ?>
@@ -54,7 +58,14 @@ for ($i=0; $i < count($partite); $i++) {
 </head>
 
 <body>
-
+    <h1>Le partite di oggi</h1>
+    <ul>
+       <?php 
+       for ($i = 0; $i < count($partite); $i++) {
+        echo "<li>{$partite[$i]["squadraCasa"]} - {$partite[$i]["squadraOspite"]} | {$partite[$i]["puntiCasa"]} - {$partite[$i]["puntiOspite"]}<br><br></li>";
+    }
+       ?> 
+    </ul>
 </body>
 
 </html>
