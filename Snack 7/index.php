@@ -3,38 +3,31 @@ e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media 
 
 <?php
 
-$studenti = [
-    [
-        "nome" => "Mario",
-        "cognome" => "Rossi",
-        "voti" => [5,6,7,7,9]
-    ],
-    [
-        "nome" => "Marco",
-        "cognome" => "Bianchi",
-        "voti" => [8,10,9,9,10]
-    ],
-    [
-        "nome" => "Anna",
-        "cognome" => "Verdi",
-        "voti" => [5,4,7,7,6]
-    ],
-];
+require __DIR__ . "/data.php";
+require __DIR__ . "/functions.php";
 
-function calcolaMedia($nums) {
-    $qt = count($nums);
-    $res = 0;
-    foreach ($nums as $n) {
-      $res += $n;
-    }
-    return $res/$qt;
-  }
-
-
-
-
-foreach ($studenti as $studente) {
-    $media = calcolaMedia($studente["voti"]);
-    echo "{$studente["nome"]} {$studente["cognome"]} {$media} <br>";
-}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack 7</title>
+</head>
+<body>
+    
+<h1>Lista studenti</h1>
+<ul>
+    <?php foreach ($studenti as $studente): ?>
+        <li>
+            <h3><?php echo "{$studente["nome"]} {$studente["cognome"]}" ?></h3>
+            <p>Media Voto: <?php echo calcolaMedia($studente["voti"]) ?></p> 
+        </li>
+        <?php endforeach; ?>
+</ul>
+
+
+</body>
+</html>
